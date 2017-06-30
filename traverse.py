@@ -5,6 +5,7 @@ import argparse
 import os
 import sys
 
+VERSION = "0.0.1.SNAPSHOT"
 isDirSet = False
 directory = None
 
@@ -24,6 +25,7 @@ def parse_args():
     global directory
 
     parser = argparse.ArgumentParser()
+    parse.add_argument("-v", "--version", help="show version")
     parser.add_argument("--dir", help="choose directory to traverse")
     args = parser.parse_args()
     if not args.dir:
@@ -32,6 +34,11 @@ def parse_args():
     isDirSet = True
     directory = args.dir
     return True
+
+
+def show_version():
+    print VERSION
+    return
 
 
 def process_dir(directory):
