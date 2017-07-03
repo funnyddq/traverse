@@ -25,7 +25,7 @@ def parse_args():
     global directory
 
     parser = argparse.ArgumentParser()
-    parse.add_argument("-v", "--version", help="show version")
+    parser.add_argument("-v", "--version", help="show version")
     parser.add_argument("--dir", help="choose directory to traverse")
     args = parser.parse_args()
     if not args.dir:
